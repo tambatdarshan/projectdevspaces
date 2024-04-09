@@ -18,6 +18,9 @@ components:
       env:
         - name: VSCODE_DEFAULT_WORKSPACE
           value: "/projects/videvspaces/envSetup/videvspace.code-workspace"
+          value: "/projects/viweb/envSetup/videvspace.code-workspace"
+          value: "/projects/veba/envSetup/videvspace.code-workspace"
+          value: "/projects/veba-deployments/envSetup/videvspace.code-workspace"
   - name: home
     volume:
       size: 1Gi
