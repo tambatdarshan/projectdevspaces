@@ -32,7 +32,7 @@ projects:
   - name: viweb
     git: 
       remotes: 
-        origin: <other repo>
+        origin: https://github.com/che-samples/cpp-hello-world
       checkoutFrom:
         revision: master
         remote: origin
