@@ -1,0 +1,53 @@
+schemaVersion: 2.2.0
+metadata:
+  name: viautomation
+components:
+  - name: viautomation
+    container:
+      image: <developer-image>
+      args: ["tail", "-f", "/dev/null"]
+      endpoints:
+        - name: http-django
+          targetPort: 8000
+          exposure: public
+      volumeMounts:
+        - name: home
+          path: /projects/home
+      memoryLimit: 2G
+      mountSources: true
+      env:
+        - name: VSCODE_DEFAULT_WORKSPACE
+          value: "/projects/videvspaces/envSetup/videvspace.code-workspace"
+  - name: home
+    volume:
+      size: 1Gi
+projects:
+  - name: videvspaces
+    git: 
+      remotes: 
+        origin: https://github.com/che-samples/cpp-hello-world
+      checkoutFrom:
+        revision: master
+        remote: origin
+  - name: viweb
+    git: 
+      remotes: 
+        origin: <other repo>
+      checkoutFrom:
+        revision: master
+        remote: origin
+  - name: veba
+    clonePath:  /projects/videvspaces/veba
+    git:
+      remotes:
+        origin: https://github.com/che-samples/cpp-hello-world
+      checkoutFrom:
+        revision: master
+        remote: origin
+  - name: veba-deployments
+    git: 
+      remotes: 
+        origin: https://github.com/che-samples/cpp-hello-world
+      checkoutFrom:
+        revision: master
+        remote: origin
