@@ -4,7 +4,7 @@ metadata:
 components:
   - name: viautomation
     container:
-      image: <developer-image>
+      image: registry.access.redhat.com/ubi8/ubi:8.9-1160
       args: ["tail", "-f", "/dev/null"]
       endpoints:
         - name: http-django
